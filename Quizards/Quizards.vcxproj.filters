@@ -21,9 +21,15 @@
     <ClCompile Include="FlashCard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FlashCardManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FlashCard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlashCardManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
