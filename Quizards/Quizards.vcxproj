@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{09807ca2-9d1b-4423-b097-068e927ccdad}</ProjectGuid>
+    <ProjectGuid>{D85D8C09-CD63-030B-E24B-BFB61D75925D}</ProjectGuid>
     <RootNamespace>Quizards</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
