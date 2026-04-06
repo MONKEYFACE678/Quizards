@@ -32,5 +32,11 @@
     <ClInclude Include="FlashCardManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="cards.txt" />
   </ItemGroup>
 </Project>
