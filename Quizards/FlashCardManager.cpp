@@ -8,30 +8,33 @@
 #include <cstdlib>
 #include <ctime>
 #include "json.hpp"
+using json = nlohmann::json;
 
 void FlashCardManager::getCards() {
     std::srand(std::time(0));
     std::string line;
     std::vector<std::string> wordsFromFile;
+    
+    try {
+        json data = json::parse(infile);
 
-    while (std::getline(infile, line, ','))
-    {
-        std::vector<FlashCard> cards;
-        wordsFromFile.push_back(line);
-        std::istringstream iss(line);
+        for (json card : data["cards"]) {
+            cards.push_back(FlashCard(card["def"], card["term"]));
+        }
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Error parsing JSON: " << e.what() << std::endl;
     }
 
-    for (int i = 0; i <= (wordsFromFile.size() / 2); i += 2) {
-        cards.push_back(FlashCard(wordsFromFile[i], wordsFromFile[i + 1]));
-    }
+    
 }
 
 FlashCard FlashCardManager::randomCard() {
     if (cards.empty()) {
-        throw std::length_error("No cards");
-        return FlashCard("NO CARDS","NO CARDS");
+        return FlashCard("NO CARD", "NO CARD");
     }
     int index = rand() % cards.size();
 
     return cards[index];
 }
+
