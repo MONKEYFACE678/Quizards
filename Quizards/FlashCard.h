@@ -12,5 +12,9 @@ public:
 
 	bool isCorrect(std::string t);
 	std::string getDef();
+	std::string getTerm();
+	bool operator==(const FlashCard& other) const {
+		return definition == other.definition && term == other.term;
+	}
 };
 

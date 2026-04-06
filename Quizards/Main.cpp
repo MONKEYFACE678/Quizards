@@ -5,30 +5,25 @@
 int main() {
 	FlashCardManager manager("cards.json");
 	manager.getCards();
-	
-	FlashCard randomCard = manager.randomCard();
 
-	std::cout << "The definition of the card is: " << randomCard.getDef() << std::endl;
+	while (!manager.isEmpty()) {
+		FlashCard randomCard = manager.randomCard();
 
-	/*
-	* This function will ask the user to input the answer from the question asked.
-	* @param answerInput will be the answer given by the user
-	* @return If answer is city after @param randomCard.isCorrect(""), it will be 1 or 0 otherwise.
-	*/
-	
-	std::string answerInput;
-	std::cout << "Answer: ";
-	std::cin >> answerInput;
+		std::cout << "The definition of the card is: " << randomCard.getDef() << std::endl;
 
-	if (randomCard.isCorrect(answerInput)) {
-		std::cout << "Great job!" << std::endl;
+		std::string answerInput;
+		std::cout << "Answer: ";
+		std::cin >> answerInput;
+
+		if (randomCard.isCorrect(answerInput)) {
+			std::cout << "Great job!" << std::endl;
+			manager.removeCard(randomCard);
+		}
+		else {
+			std::cout << "Please try again!" << std::endl;
+			std::cout << "Term was " << randomCard.getTerm() << std::endl;
+		}
 	}
-	else {
-		std::cout << "Please try again!" << std::endl;
-	}
-	
-	std::cout << "Is the term city? " << randomCard.isCorrect("City") << std::endl;
-	std::cout << "Is the term village? " << randomCard.isCorrect("Village") << std::endl;
 
-
+	std::cout << "You know all the terms!";
 }

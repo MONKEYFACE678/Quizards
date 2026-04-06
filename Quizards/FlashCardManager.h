@@ -16,5 +16,7 @@ public:
 	FlashCardManager(std::string fileName) : infile(fileName) {};
 
 	void getCards();
+	void removeCard(FlashCard);
+	bool isEmpty();
 	FlashCard randomCard();
 };

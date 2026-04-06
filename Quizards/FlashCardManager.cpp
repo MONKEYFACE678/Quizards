@@ -38,3 +38,13 @@ FlashCard FlashCardManager::randomCard() {
     return cards[index];
 }
 
+
+
+void FlashCardManager::removeCard(FlashCard card) {
+
+    cards.erase(std::remove(cards.begin(), cards.end(), card), cards.end());
+}
+
+bool FlashCardManager::isEmpty() {
+    return cards.empty();
+}

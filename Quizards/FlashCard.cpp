@@ -12,10 +12,14 @@ std::string FlashCard::toLower(std::string word) {
 
 FlashCard::FlashCard(std::string d, std::string t) : definition(d), term(toLower(t)) {}
 
-bool FlashCard::FlashCard::isCorrect(std::string t) {
+bool FlashCard::isCorrect(std::string t) {
 		return toLower(t) == term;
 	}
 
 std::string FlashCard::getDef() {
 	return definition;
+}
+
+std::string FlashCard::getTerm() {
+	return term;
 }
