@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Quizards/Quizards.vcxproj" />
+  <Project Path="Quizards/Quizards.vcxproj" Id="09807ca2-9d1b-4423-b097-068e927ccdad" />
 </Solution>
