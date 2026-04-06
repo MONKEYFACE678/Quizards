@@ -27,6 +27,10 @@ void FlashCardManager::getCards() {
 }
 
 FlashCard FlashCardManager::randomCard() {
+    if (cards.empty()) {
+        throw std::length_error("No cards");
+        return FlashCard("NO CARDS","NO CARDS");
+    }
     int index = rand() % cards.size();
 
     return cards[index];

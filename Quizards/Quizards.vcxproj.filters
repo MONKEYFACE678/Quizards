@@ -37,6 +37,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="cards.txt" />
+    <Text Include="cards.json" />
   </ItemGroup>
 </Project>

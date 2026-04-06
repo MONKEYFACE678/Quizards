@@ -3,7 +3,7 @@
 #include <iostream>
 
 int main() {
-	FlashCardManager manager("cards.txt");
+	FlashCardManager manager("cards.json");
 	manager.getCards();
 	
 	FlashCard randomCard = manager.randomCard();
