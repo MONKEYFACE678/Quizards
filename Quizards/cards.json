@@ -7,6 +7,10 @@
 		{
 			"def": "A small town",
 			"term": "Village"
+		},
+		{
+			"def": "A small city or large village",
+			"term": "Town"
 		}
 	]
 }

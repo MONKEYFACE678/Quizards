@@ -11,10 +11,10 @@
 using json = nlohmann::json;
 
 void FlashCardManager::getCards() {
+    //Seed random 
     std::srand(std::time(0));
-    std::string line;
-    std::vector<std::string> wordsFromFile;
-    
+
+    //Try parsing json, then adds each item in cards as a flashcard into cards vector
     try {
         json data = json::parse(infile);
 
@@ -25,12 +25,11 @@ void FlashCardManager::getCards() {
     catch (const std::exception& e) {
         std::cerr << "Error parsing JSON: " << e.what() << std::endl;
     }
-
-    
 }
 
 FlashCard FlashCardManager::randomCard() {
-    if (cards.empty()) {
+    //Returns a random card if there are cards, if there are no card returns an error card
+    if (isEmpty()) {
         return FlashCard("NO CARD", "NO CARD");
     }
     int index = rand() % cards.size();
@@ -38,10 +37,8 @@ FlashCard FlashCardManager::randomCard() {
     return cards[index];
 }
 
-
-
 void FlashCardManager::removeCard(FlashCard card) {
-
+    //Removes a card matching a given card using vector erase remove
     cards.erase(std::remove(cards.begin(), cards.end(), card), cards.end());
 }
 
