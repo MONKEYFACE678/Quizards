@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{09807CA2-9D1B-4423-B097-068E927CCDAD}</ProjectGuid>
+    <ProjectGuid>{D85D8C09-CD63-030B-E24B-BFB61D75925D}</ProjectGuid>
     <RootNamespace>Quizards</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -136,6 +136,7 @@
     <ClInclude Include="FlashCard.h" />
     <ClInclude Include="FlashCardManager.h" />
     <ClInclude Include="json.hpp" />
+    <ClInclude Include="QuizardGUI.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="cards.json" />
