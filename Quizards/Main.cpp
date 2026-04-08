@@ -30,5 +30,11 @@ int main() {
 	std::cout << "Is the term city? " << randomCard.isCorrect("City") << std::endl;
 	std::cout << "Is the term village? " << randomCard.isCorrect("Village") << std::endl;
 
-
+	int main(int argc, char* argv[]);
+	{
+		FlashCardManager a(argc, argv);
+		FLashCard w;
+		w.show();
+		return a.exec();
+	}
 }

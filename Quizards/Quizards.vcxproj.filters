@@ -24,6 +24,9 @@
     <ClCompile Include="FlashCardManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="QuizardGUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FlashCard.h">
@@ -32,5 +35,8 @@
     <ClInclude Include="FlashCardManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="cards.txt" />
   </ItemGroup>
 </Project>
