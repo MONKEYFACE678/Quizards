@@ -7,28 +7,41 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
-
-
+#include "json.hpp"
+using json = nlohmann::json;
 
 void FlashCardManager::getCards() {
+    //Seed random 
     std::srand(std::time(0));
-    std::string line;
-    std::vector<std::string> wordsFromFile;
 
-    while (std::getline(infile, line, ','))
-    {
-        std::vector<FlashCard> cards;
-        wordsFromFile.push_back(line);
-        std::istringstream iss(line);
+    //Try parsing json, then adds each item in cards as a flashcard into cards vector
+    try {
+        json data = json::parse(infile);
+
+        for (json card : data["cards"]) {
+            cards.push_back(FlashCard(card["def"], card["term"]));
+        }
     }
-
-    for (int i = 0; i <= (wordsFromFile.size() / 2); i += 2) {
-        cards.push_back(FlashCard(wordsFromFile[i], wordsFromFile[i + 1]));
+    catch (const std::exception& e) {
+        std::cerr << "Error parsing JSON: " << e.what() << std::endl;
     }
 }
 
 FlashCard FlashCardManager::randomCard() {
+    //Returns a random card if there are cards, if there are no card returns an error card
+    if (isEmpty()) {
+        return FlashCard("NO CARD", "NO CARD");
+    }
     int index = rand() % cards.size();
 
     return cards[index];
+}
+
+void FlashCardManager::removeCard(FlashCard card) {
+    //Removes a card matching a given card using vector erase remove
+    cards.erase(std::remove(cards.begin(), cards.end(), card), cards.end());
+}
+
+bool FlashCardManager::isEmpty() {
+    return cards.empty();
 }

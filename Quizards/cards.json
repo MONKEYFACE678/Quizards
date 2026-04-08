@@ -1,0 +1,16 @@
+{
+	"cards": [
+		{
+			"def": "A large town",
+			"term":  "City"
+		},
+		{
+			"def": "A small town",
+			"term": "Village"
+		},
+		{
+			"def": "A small city or large village",
+			"term": "Town"
+		}
+	]
+}
