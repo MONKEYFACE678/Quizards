@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\OneDrive\Documents\jessequizards\build\mainwindow.cpp" />
     <ClCompile Include="FlashCard.cpp" />
     <ClCompile Include="FlashCardManager.cpp" />
     <ClCompile Include="Main.cpp" />
