@@ -136,6 +136,7 @@
     <ClInclude Include="FlashCard.h" />
     <ClInclude Include="FlashCardManager.h" />
     <ClInclude Include="json.hpp" />
+    <ClInclude Include="QuizardGUI.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="cards.json" />

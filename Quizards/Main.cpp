@@ -15,21 +15,13 @@ int main() {
 		std::cout << "Answer: ";
 		std::cin >> answerInput;
 
-	if (randomCard.isCorrect(answerInput)) {
-		std::cout << "Great job!" << std::endl;
-	}
-	else {
-		std::cout << "Please try again!" << std::endl;
-	}
-	
-	std::cout << "Is the term city? " << randomCard.isCorrect("City") << std::endl;
-	std::cout << "Is the term village? " << randomCard.isCorrect("Village") << std::endl;
-
-	int main(int argc, char* argv[]);
-	{
-		FlashCardManager a(argc, argv);
-		FLashCard w;
-		w.show();
-		return a.exec();
+		if (randomCard.isCorrect(answerInput)) {
+			std::cout << "Great job!" << std::endl;
+			manager.removeCard(randomCard);
+		}
+		else {
+			std::cout << "Please try again!" << std::endl;
+			std::cout << "The term was " << randomCard.getTerm() << std::endl;
+		}
 	}
 }
